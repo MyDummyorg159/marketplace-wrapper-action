@@ -19,4 +19,4 @@ runs:
           core.setOutput("message", message);
 
     - name: Forward output
-      run: echo "message=${{ steps.github-script.outputs.message }}"
+      run: 'echo "message=${{ steps.github-script.outputs.message }}"'
