@@ -10,13 +10,11 @@ outputs:
 runs:
   using: "composite"
   steps:
-    - name: Run GitHub Script
+    - name: Say hello
+      id: say
       uses: actions/github-script@v7
       with:
         script: |
           const name = "${{ inputs.name }}";
-          const message = `Hello from wrapped action, ${name}!`;
-          core.setOutput("message", message);
-
-    - name: Forward output
-      run: 'echo "message=${{ steps.github-script.outputs.message }}"'
+          const message = `🎉 Hello from wrapped action, ${name}!`;
+          core.setOutput("message", message)
